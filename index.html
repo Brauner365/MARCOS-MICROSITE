@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Marcos Georgiou — Hospitality transformation leader. 200+ international launches. 23 countries. Operating model design at pace.">
+<title>Marcos Georgiou</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;
+  --s1:#0F0F0F;
+  --s2:#161616;
+  --s3:#1E1E1E;
+  --line:#1F1F1F;
+  --line2:#2E2E2E;
+  --tx:#EDECE6;
+  --txm:#7A8898;
+  --txf:#3A4452;
+  --gold:#C8943C;
+  --goldt:rgba(200,148,60,0.08);
+  --goldm:rgba(200,148,60,0.25);
+  --sage:#5C7A62;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--tx);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* grain overlay */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity:.03;
+  pointer-events:none;
+  z-index:1000;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:20px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:all .4s;
+}
+nav.scrolled{
+  background:rgba(8,8,8,.94);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line2);
+  padding:14px 48px;
+}
+.nav-mark{
+  font-family:'Fraunces',Georgia,serif;
+  font-size:18px;font-weight:300;
+  color:var(--tx);letter-spacing:-.3px;
+}
+.nav-mark em{font-style:italic;color:var(--gold)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{
+  font-size:12px;color:var(--txm);text-decoration:none;
+  letter-spacing:.2px;transition:color .15s;font-weight:300;
+}
+.nav-links a:hover{color:var(--tx)}
+.nav-cta{
+  font-size:12px;font-weight:500;
+  color:var(--gold);text-decoration:none;
+  padding:8px 20px;
+  border:1px solid var(--goldm);
+  border-radius:2px;
+  transition:all .15s;
+  letter-spacing:.2px;
+}
+.nav-cta:hover{background:var(--goldt);border-color:var(--gold)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 48px 80px;
+  max-width:1200px;margin:0 auto;
+  position:relative;
+}
+.hero-rule{
+  position:absolute;top:0;bottom:0;left:48px;
+  width:1px;background:var(--line2);
+  transform-origin:top;
+}
+.hero-content{padding-left:40px}
+.hero-tag{
+  font-size:11px;color:var(--txf);
+  margin-bottom:32px;
+  display:flex;align-items:center;gap:12px;
+  font-weight:300;
+}
+.hero-tag::before{content:'';width:28px;height:1px;background:var(--gold)}
+.hero-name{
+  font-family:'Fraunces',Georgia,serif;
+  font-size:clamp(60px,8.5vw,120px);
+  font-weight:300;line-height:.95;
+  letter-spacing:-2px;
+  color:var(--tx);
+  margin-bottom:28px;
+}
+.hero-name em{font-style:italic;color:var(--txm);display:block}
+.hero-deck{
+  font-size:clamp(15px,1.8vw,19px);
+  font-weight:300;
+  color:var(--txm);
+  max-width:52ch;
+  line-height:1.65;
+  margin-bottom:52px;
+}
+.hero-deck strong{color:var(--tx);font-weight:400}
+
+.hero-stats{
+  display:flex;gap:0;
+  border:1px solid var(--line2);
+  max-width:560px;
+  margin-bottom:48px;
+}
+.hstat{
+  flex:1;padding:22px 28px;
+  border-right:1px solid var(--line2);
+}
+.hstat:last-child{border-right:none}
+.hstat-n{
+  font-family:'Fraunces',serif;
+  font-size:clamp(32px,4.5vw,52px);
+  font-weight:300;line-height:1;
+  color:var(--tx);letter-spacing:-1.5px;
+}
+.hstat-n sup{font-size:.45em;color:var(--gold);letter-spacing:0;vertical-align:super}
+.hstat-d{font-size:11px;color:var(--txf);margin-top:6px;line-height:1.45;font-weight:300}
+
+.hero-acts{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-a{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--gold);color:#000;
+  font-size:13px;font-weight:500;
+  padding:13px 28px;border-radius:2px;
+  text-decoration:none;transition:all .15s;
+  letter-spacing:.1px;
+}
+.btn-a:hover{background:#b5832f;transform:translateY(-1px)}
+.btn-b{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--txm);font-size:13px;font-weight:300;
+  text-decoration:none;padding:13px 0;
+  border-bottom:1px solid transparent;
+  transition:all .15s;
+}
+.btn-b:hover{color:var(--tx);border-color:var(--line2)}
+
+/* ── DIVIDERS ── */
+.rule{border:none;border-top:1px solid var(--line);margin:0}
+
+/* ── SECTIONS ── */
+.section{padding:96px 48px;max-width:1200px;margin:0 auto}
+.section-marker{
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:56px;
+}
+.section-marker-line{width:32px;height:1px;background:var(--gold)}
+.section-marker-txt{font-size:12px;color:var(--txm);font-weight:300;letter-spacing:.1px}
+
+/* ── WHAT I DO ── */
+.intro-statement{
+  font-family:'Fraunces',serif;
+  font-size:clamp(28px,3.8vw,50px);
+  font-weight:300;line-height:1.25;
+  color:var(--tx);
+  max-width:20ch;
+  margin-bottom:56px;
+  letter-spacing:-.5px;
+}
+.intro-statement em{font-style:italic;color:var(--txm)}
+
+.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.what-body{font-size:15px;color:var(--txm);line-height:1.85;font-weight:300;max-width:48ch}
+.what-body strong{color:var(--tx);font-weight:400}
+.what-body p+p{margin-top:18px}
+
+.capabilities{margin-top:0;display:flex;flex-direction:column}
+.cap{
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:1fr auto;
+  align-items:start;gap:16px;
+  transition:border-color .15s;
+}
+.cap:first-child{border-top:1px solid var(--line)}
+.cap:hover{border-color:var(--line2)}
+.cap-title{font-size:14px;font-weight:400;color:var(--tx);margin-bottom:4px}
+.cap-desc{font-size:12px;color:var(--txf);line-height:1.55;font-weight:300;max-width:38ch}
+.cap-arrow{color:var(--txf);font-size:16px;margin-top:2px;transition:color .15s}
+.cap:hover .cap-arrow{color:var(--gold)}
+
+/* ── CAREER ── */
+.career-intro{
+  font-size:17px;color:var(--txm);line-height:1.8;
+  max-width:52ch;margin-bottom:72px;font-weight:300;
+}
+.career-intro strong{color:var(--tx);font-weight:400}
+
+.tl{display:flex;flex-direction:column}
+.tl-row{
+  display:grid;grid-template-columns:180px 1fr;
+  gap:48px;padding:44px 0;
+  border-top:1px solid var(--line);
+  position:relative;
+}
+.tl-row:last-child{border-bottom:1px solid var(--line)}
+.tl-row:hover .tl-dot{background:var(--gold)}
+.tl-left{padding-top:6px;position:relative}
+.tl-dot{
+  position:absolute;left:-25px;top:8px;
+  width:7px;height:7px;border-radius:50%;
+  background:var(--line2);
+  transition:background .2s;
+}
+.tl-period{font-size:11px;color:var(--gold);font-weight:400;margin-bottom:5px;letter-spacing:.2px}
+.tl-org{font-size:13px;color:var(--tx);font-weight:400;margin-bottom:2px}
+.tl-loc{font-size:11px;color:var(--txf);font-weight:300}
+.tl-right{}
+.tl-role{
+  font-family:'Fraunces',serif;
+  font-size:clamp(18px,2vw,24px);
+  font-weight:300;color:var(--tx);
+  margin-bottom:10px;line-height:1.25;
+  letter-spacing:-.2px;
+}
+.tl-body{font-size:13px;color:var(--txm);line-height:1.75;margin-bottom:18px;max-width:54ch;font-weight:300}
+.tl-facts{display:flex;flex-direction:column;gap:0}
+.tl-fact{
+  font-size:12px;color:var(--txf);font-weight:300;
+  display:block;
+  padding:7px 0 7px 14px;
+  border-left:1px solid var(--line2);
+  margin-bottom:2px;
+  line-height:1.55;
+}
+.tl-fact strong{color:var(--txm);font-weight:400;margin-right:5px}
+
+/* ── NUMBERS ── */
+.nums-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line2);
+  border:1px solid var(--line2);
+  margin-bottom:0;
+}
+.num-cell{background:var(--s1);padding:36px 32px}
+.num-big{
+  font-family:'Fraunces',serif;
+  font-size:clamp(44px,6vw,72px);
+  font-weight:200;color:var(--tx);
+  letter-spacing:-3px;line-height:1;
+}
+.num-big sub{
+  font-size:.38em;color:var(--gold);
+  letter-spacing:0;font-weight:400;
+  vertical-align:baseline;
+}
+.num-lbl{font-size:12px;color:var(--txm);margin-top:10px;line-height:1.5;font-weight:300}
+.num-ctx{font-size:11px;color:var(--txf);margin-top:3px;font-weight:300}
+
+/* ── HOW I THINK ── */
+.think-feature{
+  margin-bottom:2px;
+  background:var(--s1);
+  border:1px solid var(--line2);
+  padding:48px 52px;
+  position:relative;
+  overflow:hidden;
+}
+.think-feature::before{
+  content:'\201C';
+  position:absolute;top:-20px;left:40px;
+  font-family:'Fraunces',serif;
+  font-size:200px;font-weight:300;
+  color:var(--line);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.think-feature-q{
+  font-family:'Fraunces',serif;
+  font-size:clamp(24px,3vw,38px);
+  font-weight:300;font-style:italic;
+  color:var(--tx);line-height:1.3;
+  margin-bottom:20px;
+  letter-spacing:-.3px;
+  position:relative;
+  max-width:26ch;
+}
+.think-feature-a{
+  font-size:15px;color:var(--txm);
+  line-height:1.8;font-weight:300;
+  max-width:60ch;position:relative;
+}
+.think-three{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line2);
+  border:1px solid var(--line2);
+  border-top:none;
+}
+.think-cell{background:var(--s1);padding:32px}
+.think-cell-q{
+  font-family:'Fraunces',serif;
+  font-size:16px;font-style:italic;
+  font-weight:300;color:var(--tx);
+  margin-bottom:10px;line-height:1.35;
+}
+.think-cell-a{font-size:12px;color:var(--txf);line-height:1.7;font-weight:300}
+
+/* ── LOOKING FOR ── */
+.looking-intro{
+  font-family:'Fraunces',serif;
+  font-size:clamp(26px,3.2vw,42px);
+  font-weight:300;color:var(--tx);
+  max-width:22ch;line-height:1.25;
+  letter-spacing:-.3px;
+  margin-bottom:48px;
+}
+.looking-intro em{font-style:italic;color:var(--txm)}
+
+.looking-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line2);
+  border:1px solid var(--line2);
+}
+.look{background:var(--s1);padding:28px 28px 32px;transition:background .15s}
+.look:hover{background:var(--s2)}
+.look.on{background:var(--goldt);border-left:2px solid var(--gold)}
+.look-title{font-size:14px;font-weight:400;color:var(--tx);margin-bottom:10px}
+.look.on .look-title{color:var(--gold)}
+.look-body{font-size:12px;color:var(--txf);line-height:1.65;font-weight:300}
+
+/* ── CONTACT ── */
+.contact-wrap{padding:96px 48px 120px;max-width:1200px;margin:0 auto}
+.contact-box{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;
+  align-items:center;
+  border:1px solid var(--line2);
+  padding:72px 64px;
+  background:var(--s1);
+  position:relative;
+}
+.contact-box::before{
+  content:'';
+  position:absolute;top:0;left:0;
+  width:60px;height:3px;
+  background:var(--gold);
+}
+.contact-h{
+  font-family:'Fraunces',serif;
+  font-size:clamp(30px,3.8vw,48px);
+  font-weight:300;line-height:1.15;
+  letter-spacing:-.5px;
+  margin-bottom:18px;color:var(--tx);
+}
+.contact-sub{font-size:14px;color:var(--txm);line-height:1.75;font-weight:300;max-width:38ch}
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.clink{
+  display:flex;align-items:center;gap:16px;
+  padding:18px 22px;
+  border:1px solid var(--line2);
+  background:var(--s2);
+  text-decoration:none;color:var(--tx);
+  transition:all .15s;
+  border-radius:2px;
+}
+.clink:hover{border-color:var(--gold);background:var(--goldt)}
+.clink-icon{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--s3);border:1px solid var(--line2);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.clink-icon svg{width:16px;height:16px}
+.clink-lbl{font-size:11px;color:var(--txf);margin-bottom:2px;font-weight:300}
+.clink-val{font-size:14px;font-weight:400;color:var(--tx)}
+.clink:hover .clink-val{color:var(--gold)}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--line);
+  padding:22px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1200px;margin:0 auto;
+}
+.footer-l{font-size:12px;color:var(--txf);font-weight:300}
+.footer-r{font-size:11px;color:var(--txf);font-weight:300}
+
+/* ── FADE IN ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav,.nav-cta{padding-left:24px;padding-right:24px}
+  nav.scrolled{padding:14px 24px}
+  .hero{padding:0 24px 64px}
+  .hero-rule{left:24px}
+  .hero-content{padding-left:20px}
+  .section,.contact-wrap{padding:72px 24px}
+  .what-grid,.contact-box{grid-template-columns:1fr;gap:40px}
+  .contact-box{padding:40px 28px}
+  .think-three{grid-template-columns:1fr}
+  .looking-grid{grid-template-columns:1fr 1fr}
+  .nums-grid{grid-template-columns:1fr 1fr}
+  .tl-row{grid-template-columns:1fr;gap:12px}
+  .tl-left{padding-top:0}
+  .tl-dot{display:none}
+  .nav-links{display:none}
+  footer{padding:20px 24px}
+}
+@media(max-width:560px){
+  .hero-stats{flex-direction:column}
+  .hstat{border-right:none;border-bottom:1px solid var(--line2)}
+  .hstat:last-child{border-bottom:none}
+  .nums-grid{grid-template-columns:1fr}
+  .looking-grid{grid-template-columns:1fr}
+  .think-feature{padding:32px 28px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-mark">Marcos <em>G.</em></div>
+  <ul class="nav-links">
+    <li><a href="#what">What I do</a></li>
+    <li><a href="#career">Career</a></li>
+    <li><a href="#thinking">How I think</a></li>
+    <li><a href="#looking">What I'm looking for</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-rule" id="heroRule"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Hospitality transformation · UK &amp; Europe</div>
+    <h1 class="hero-name">Marcos<br><em>Georgiou</em></h1>
+    <p class="hero-deck">
+      I build the operating infrastructure that lets <strong>hospitality businesses scale, recover, and last</strong>.
+      Not plans. Not frameworks. The actual systems, teams and disciplines that make it work — at pace, across multiple sites, across borders.
+    </p>
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-n"><span class="count" data-target="200">0</span><sup>+</sup></div>
+        <div class="hstat-d">International site launches<br>in 2.5 years</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n"><span class="count" data-target="23">0</span></div>
+        <div class="hstat-d">Countries opened<br>Jamie's Italian</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n">£<span class="count" data-target="14">0</span>m</div>
+        <div class="hstat-d">Budget ownership<br>Deliveroo Editions</div>
+      </div>
+    </div>
+    <div class="hero-acts">
+      <a href="#contact" class="btn-a">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Get in touch
+      </a>
+      <a href="#career" class="btn-b">
+        See the full story
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- WHAT I DO -->
+<div class="section" id="what">
+  <div class="section-marker"><div class="section-marker-line"></div><span class="section-marker-txt">What I do</span></div>
+  <h2 class="intro-statement reveal">The person you need<br>when the <em>easy part<br>is over.</em></h2>
+  <div class="what-grid">
+    <div class="what-body reveal">
+      <p>Most hospitality businesses are good at opening. The concept, the launch, the excitement. The harder part is making it work — consistently, profitably, across 10 sites, 50 sites, or 10 countries — without the founder in the room.</p>
+      <p>That's where I come in. I design the operating models, governance frameworks and performance disciplines that <strong>turn a promising business into a scalable one</strong>. Or, when things have gone wrong, I stabilise, reset and rebuild — fast enough to matter.</p>
+      <p>I've done this in regulated environments, distressed situations, rapid expansions, and market entries. The circumstances differ. The approach — honest assessment, clear decision rights, rigorous standards — doesn't.</p>
+    </div>
+    <div class="capabilities reveal">
+      <div class="cap">
+        <div>
+          <div class="cap-title">Turnaround &amp; recovery</div>
+          <div class="cap-desc">Stabilising distressed multi-site operations. Restoring governance, cost discipline and performance visibility when a business has lost control of itself.</div>
+        </div>
+        <div class="cap-arrow">→</div>
+      </div>
+      <div class="cap">
+        <div>
+          <div class="cap-title">International expansion</div>
+          <div class="cap-desc">Building operating models for international growth — not copying the UK playbook into a new market, but designing something that actually works there.</div>
+        </div>
+        <div class="cap-arrow">→</div>
+      </div>
+      <div class="cap">
+        <div>
+          <div class="cap-title">Operating model design</div>
+          <div class="cap-desc">Creating the infrastructure — accountability, standards, financial controls, decision rights — that lets a business grow without the wheels coming off.</div>
+        </div>
+        <div class="cap-arrow">→</div>
+      </div>
+      <div class="cap">
+        <div>
+          <div class="cap-title">Rapid scale-up</div>
+          <div class="cap-desc">Delivering high volumes of new site launches without sacrificing standards. 200+ sites. 23 countries. The machine exists because I built it.</div>
+        </div>
+        <div class="cap-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- CAREER -->
+<div class="section" id="career">
+  <div class="section-marker"><div class="section-marker-line"></div><span class="section-marker-txt">Career</span></div>
+  <p class="career-intro reveal">Twenty years in hospitality, always in the room where the hardest decisions get made. <strong>Here's what I've actually done — not job titles, the work.</strong></p>
+
+  <div class="tl">
+
+    <div class="tl-row reveal">
+      <div class="tl-left">
+        <div class="tl-dot"></div>
+        <div class="tl-period">2020 — Present</div>
+        <div class="tl-org">MG Consultancy</div>
+        <div class="tl-loc">UK &amp; Europe · Self-employed</div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">Director of Operations &amp; Operating Partner</div>
+        <div class="tl-body">Board-level advisory and senior delivery across growth, market entry and turnaround situations. Working with founders, executive teams and investors who need operational expertise alongside their capital — not consultancy at arm's length, but delivery ownership.</div>
+        <div class="tl-facts">
+          <div class="tl-fact">Led operating model redesign and delivery for multi-site concepts and flagship launches</div>
+          <div class="tl-fact">Built governance, financial and operational frameworks to support controlled scale</div>
+          <div class="tl-fact">Embedded accountability, decision rights and performance discipline across portfolio businesses</div>
+          <div class="tl-fact">Senior interim and delivery leadership during periods of elevated execution and reputational risk</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row reveal">
+      <div class="tl-left">
+        <div class="tl-dot"></div>
+        <div class="tl-period">Jul 2025 — Jan 2026</div>
+        <div class="tl-org">GatepassUK</div>
+        <div class="tl-loc">UK · Hybrid</div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">Chief Product Officer</div>
+        <div class="tl-body">Executive ownership of product direction, systems architecture and operational integration for an AI-enabled regulatory review platform. Set product strategy aligned to commercial performance, operational efficiency and risk control.</div>
+        <div class="tl-facts">
+          <div class="tl-fact">Led cross-functional delivery across product, operations and compliance</div>
+          <div class="tl-fact">Built scalable digital frameworks to support growth, assurance and repeatable delivery</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row reveal">
+      <div class="tl-left">
+        <div class="tl-dot"></div>
+        <div class="tl-period">Jun 2024 — Aug 2025</div>
+        <div class="tl-org">Considerate Constructors Scheme</div>
+        <div class="tl-loc">UK · On-site</div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">Head of Product &amp; Systems · Compliance &amp; Risk</div>
+        <div class="tl-body">Senior leadership in a regulated, high-scrutiny environment. Strengthened compliance frameworks, risk governance and operational controls. Improved systems performance to support auditability, service quality and consistency.</div>
+        <div class="tl-facts">
+          <div class="tl-fact">Strengthened compliance and audit readiness in a nationally scrutinised environment</div>
+          <div class="tl-fact">Redesigned risk governance and operational controls across the organisation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row reveal">
+      <div class="tl-left">
+        <div class="tl-dot"></div>
+        <div class="tl-period">Aug 2020 — Aug 2022</div>
+        <div class="tl-org">YourKitchen</div>
+        <div class="tl-loc">Amsterdam · Co-Founder</div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">Director of Operations &amp; Co-Founder</div>
+        <div class="tl-body">Built the operating infrastructure that enabled multiple food brands to scale through ghost kitchen models — lower risk, higher upside than traditional brick-and-mortar. Designed the financial controls and supplier frameworks that protected margins at scale.</div>
+        <div class="tl-facts">
+          <div class="tl-fact">Helped several food brands expand into new markets with strong unit economics</div>
+          <div class="tl-fact">Managed and optimised budgets to consistently meet financial obligations and protect margins</div>
+          <div class="tl-fact">Built high-trust supplier relationships and weekly inventory review systems</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row reveal">
+      <div class="tl-left">
+        <div class="tl-dot"></div>
+        <div class="tl-period">Before 2020</div>
+        <div class="tl-org">Deliveroo Editions</div>
+        <div class="tl-loc">UK &amp; International</div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">International Expansion — 200+ sites in 2.5 years</div>
+        <div class="tl-body">Delivered the global operating model rollout for Deliveroo Editions across multiple international markets. This wasn't project management. It was building the machine: the standards, the supplier frameworks, the launch playbook, the governance, the team — and running it at scale with tight delivery governance and full budget ownership.</div>
+        <div class="tl-facts">
+          <div class="tl-fact"><strong>200+</strong> international site launches delivered in 2.5 years</div>
+          <div class="tl-fact"><strong>£14m</strong> budget ownership with full P&amp;L accountability</div>
+          <div class="tl-fact">Global operating model design, deployment and continuous improvement</div>
+          <div class="tl-fact">Multi-market delivery governance across different regulatory and supply chain environments</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row reveal">
+      <div class="tl-left">
+        <div class="tl-dot"></div>
+        <div class="tl-period">Before 2020</div>
+        <div class="tl-org">Jamie's Italian</div>
+        <div class="tl-loc">Global</div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">International Operations — 23 countries, 28 UK openings</div>
+        <div class="tl-body">Led international operations across global markets during one of the most ambitious restaurant expansion programmes in UK dining history. Not just opening restaurants — embedding the operating model, brand standards, quality assurance and commercial controls in markets with very different cultures, supply chains and regulatory requirements.</div>
+        <div class="tl-facts">
+          <div class="tl-fact"><strong>23 countries</strong> — operating model built to travel without losing what made the brand</div>
+          <div class="tl-fact"><strong>28 UK openings</strong> — brand standards, QA and commercial controls embedded at pace</div>
+          <div class="tl-fact">Cross-market quality assurance and compliance across diverse regulatory environments</div>
+          <div class="tl-fact">Commercial controls, P&L discipline and performance frameworks across the international estate</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row reveal">
+      <div class="tl-left">
+        <div class="tl-dot"></div>
+        <div class="tl-period">Mar 2019 — Feb 2020</div>
+        <div class="tl-org">The Student Hotel</div>
+        <div class="tl-loc">Amsterdam, Berlin, Vienna</div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">Food &amp; Beverage Specialist</div>
+        <div class="tl-body">High-performing F&B operations across three European cities. Led the launch of a new operation and concept in Berlin — full setup: processes, supply chain, kitchen layout, equipment. Shaped and represented a new food concept across the group.</div>
+        <div class="tl-facts">
+          <div class="tl-fact">Launched new F&B operation in Berlin from scratch — supply chain, layout, processes</div>
+          <div class="tl-fact">Multi-city operations across Amsterdam, Berlin and Vienna simultaneously</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- NUMBERS -->
+<div class="section" id="numbers">
+  <div class="section-marker"><div class="section-marker-line"></div><span class="section-marker-txt">By the numbers</span></div>
+  <div class="nums-grid reveal">
+    <div class="num-cell">
+      <div class="num-big">200<sub>+</sub></div>
+      <div class="num-lbl">International site launches</div>
+      <div class="num-ctx">Deliveroo Editions, 2.5 years</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-big">23</div>
+      <div class="num-lbl">Countries opened</div>
+      <div class="num-ctx">Jamie's Italian international estate</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-big">28</div>
+      <div class="num-lbl">UK restaurant openings</div>
+      <div class="num-ctx">Jamie's Italian, brand standards embedded</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-big">£14<sub>m</sub></div>
+      <div class="num-lbl">Budget ownership</div>
+      <div class="num-ctx">Full P&L accountability, Deliveroo Editions</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-big">20<sub>+</sub></div>
+      <div class="num-lbl">Years in senior operations</div>
+      <div class="num-ctx">Multi-site, multi-market, multi-format</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-big">5</div>
+      <div class="num-lbl">Countries lived &amp; operated in</div>
+      <div class="num-ctx">UK, Netherlands, Germany, Austria, global</div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- HOW I THINK -->
+<div class="section" id="thinking">
+  <div class="section-marker"><div class="section-marker-line"></div><span class="section-marker-txt">How I think</span></div>
+
+  <div class="think-feature reveal">
+    <div class="think-feature-q">"Creativity opens the door. Operating discipline keeps it open."</div>
+    <div class="think-feature-a">Most restaurants don't fail because the idea wasn't good enough. They fail because the idea wasn't backed by recipes, costings, training, prep systems, clear roles and honest weekly controls. I'm not the person who dims the creative ambition. I'm the person who makes sure it can actually survive contact with reality.</div>
+  </div>
+
+  <div class="think-three reveal">
+    <div class="think-cell">
+      <div class="think-cell-q">"Busy is not the same as progress."</div>
+      <div class="think-cell-a">A full day can feel productive — suppliers chased, prep corrected, service fixed. But if the same problems come back next week, the business didn't get stronger. It just kept moving. I look for what keeps repeating and what needs to change so next Monday is easier.</div>
+    </div>
+    <div class="think-cell">
+      <div class="think-cell-q">"Can it travel?"</div>
+      <div class="think-cell-a">The test I apply to every operating model is whether it works outside the building — when the team is in an unfamiliar environment, the founder isn't watching, and conditions are imperfect. Strong standards can travel. Workarounds can't.</div>
+    </div>
+    <div class="think-cell">
+      <div class="think-cell-q">"Vision creates momentum. Operational discipline turns it into sustainable performance."</div>
+      <div class="think-cell-a">I've worked with founders whose businesses were falling apart because no one had written the standards down, built the accountability structures, or made the financial controls real. My job is to turn the vision into something the organisation can actually deliver.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- LOOKING FOR -->
+<div class="section" id="looking">
+  <div class="section-marker"><div class="section-marker-line"></div><span class="section-marker-txt">What I'm looking for</span></div>
+  <h2 class="looking-intro reveal">The right <em>situation,</em><br>not just the right title.</h2>
+
+  <div class="looking-grid reveal">
+    <div class="look on">
+      <div class="look-title">Turnaround &amp; distressed</div>
+      <div class="look-body">Businesses that have hit the wall — operationally, financially, or both. Where the brief is stabilise, reset the operating model, and rebuild the foundation. This is the work I find most meaningful and where my experience is most directly transferable.</div>
+    </div>
+    <div class="look on">
+      <div class="look-title">International expansion</div>
+      <div class="look-body">Brands making their first move outside a home market, or scaling across multiple countries at speed. I've built the operating model for this from scratch — twice. I know what breaks, what has to be different market by market, and what can't be compromised.</div>
+    </div>
+    <div class="look on">
+      <div class="look-title">PE-backed scale-up</div>
+      <div class="look-body">PE-backed businesses where the operating infrastructure hasn't kept up with the ambition. As an operating partner or senior leadership hire, I bring the operational rigour that lets a portfolio company grow without losing control.</div>
+    </div>
+    <div class="look">
+      <div class="look-title">Permanent or interim</div>
+      <div class="look-body">Open to the right full-time role — COO, Operations Director, Head of Operations. Also available for interim and fractional mandates where the business needs senior operational leadership for a defined period or specific challenge.</div>
+    </div>
+    <div class="look">
+      <div class="look-title">UK &amp; Europe</div>
+      <div class="look-body">Based in the UK. Open to European mandates — spent years based in Amsterdam, comfortable operating across multiple European markets and regulatory environments.</div>
+    </div>
+    <div class="look">
+      <div class="look-title">Not looking for</div>
+      <div class="look-body">Single-site management. Roles where operational leadership is subordinate to a purely financial agenda. Businesses that aren't genuinely ready to change how they operate. I'm direct about this because it saves everyone time.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- CONTACT -->
+<div class="contact-wrap" id="contact">
+  <div class="contact-box reveal">
+    <div>
+      <h2 class="contact-h">Let's talk about<br>what you're building.</h2>
+      <p class="contact-sub">If you're working on something that needs serious operational leadership — or you're in a situation that needs fixing — I'm direct and easy to reach. No middlemen, no process.</p>
+    </div>
+    <div class="contact-links">
+      <a class="clink" href="mailto:YOUR-EMAIL-HERE">
+        <div class="clink-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="clink-lbl">Email</div>
+          <div class="clink-val">YOUR-EMAIL-HERE</div>
+        </div>
+      </a>
+      <a class="clink" href="tel:YOUR-PHONE-HERE">
+        <div class="clink-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.0.6 2 2 0 012 4.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 11a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 18v.92z"/></svg>
+        </div>
+        <div>
+          <div class="clink-lbl">Phone</div>
+          <div class="clink-val">YOUR-PHONE-HERE</div>
+        </div>
+      </a>
+      <a class="clink" href="YOUR-LINKEDIN-URL-HERE" target="_blank" rel="noopener">
+        <div class="clink-icon">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div>
+          <div class="clink-lbl">LinkedIn</div>
+          <div class="clink-val">Marcos Georgiou</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-l">Marcos Georgiou · Hospitality transformation leadership</div>
+  <div class="footer-r">UK &amp; Europe · Available now</div>
+</footer>
+
+<script>
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+
+// Scroll reveal
+const revObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target)}});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+// Count-up on hero stats — fires once on page load
+function countUp(el){
+  const target=+el.dataset.target;
+  const duration=1400;
+  const start=performance.now();
+  function step(now){
+    const p=Math.min((now-start)/duration,1);
+    const ease=1-Math.pow(1-p,3);
+    el.textContent=Math.round(ease*target);
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target;
+  }
+  requestAnimationFrame(step);
+}
+// Delay slightly so page feels loaded first
+setTimeout(()=>document.querySelectorAll('.count').forEach(countUp),600);
+
+// Hero rule height animation
+const rule=document.getElementById('heroRule');
+if(rule){
+  rule.style.transform='scaleY(0)';
+  rule.style.transition='transform 1.2s cubic-bezier(0.16,1,0.3,1)';
+  setTimeout(()=>rule.style.transform='scaleY(1)',200);
+}
+</script>
+</body>
+</html>
